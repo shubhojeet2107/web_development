@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Registration Form</title>
+
+    <!-- Correctly Linking External CSS File -->
+    <link rel="stylesheet" href="labmanual_1.css">
+
+    <!-- Adding inline CSS for animated background and form styling -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+            background-size: 400% 400%;
+            animation: gradientBackground 15s ease infinite;
+        }
+
+        @keyframes gradientBackground {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .form-container {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+            width: 400px;
+        }
+
+        .form-container table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .form-container td {
+            padding: 10px;
+        }
+
+        .form-container input[type="text"],
+        .form-container select {
+            width: 100%;
+            padding: 8px;
+            margin: 5px 0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        .form-container input[type="radio"] {
+            margin: 0 5px;
+        }
+
+        .form-container input[type="submit"] {
+            width: 100%;
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 15px;
+            transition: background-color 0.3s ease;
+        }
+
+        .form-container input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+    </style>
+
+    <script type="text/javascript">
+        function validate() {
+            if (document.myForm.Name.value == "") {
+                alert("Please Provide Your Name");
+                document.myForm.Name.focus();
+                return false;
+            }
+
+            var gen = document.getElementsByName('gender');
+            var genValue = false;
+            for (var i = 0; i < gen.length; i++) {
+                if (gen[i].checked == true) {
+                    genValue = true;
+                }
+            }
+            if (!genValue) {
+                alert("Gender not selected");
+                return false;
+            }
+
+            if (document.myForm.Email.value == "") {
+                alert("Please provide your Email ID");
+                document.myForm.Email.focus();
+                return false;
+            }
+
+            if ((document.myForm.phno.value == "") || (document.myForm.phno.value.length != 10)) {
+                alert("Please provide a valid phone number format - 10 digits");
+                document.myForm.phno.focus();
+                return false;
+            }
+
+            if ((document.myForm.Zip.value == "") || (document.myForm.Zip.value.length != 6)) {
+                alert("Please provide a valid zip code format");
+                document.myForm.Zip.focus();
+                return false;
+            }
+
+            if (document.myForm.Country.value == "-1") {
+                alert("Please provide your Country Name");
+                return false;
+            }
+
+            return true;
+        }
+
+        function validateEmail() {
+            var emailID = document.myForm.Email.value;
+            var atpos = emailID.indexOf("@");
+            var dotpos = emailID.lastIndexOf(".");
+            if (atpos < 1 || (dotpos - atpos < 2)) {
+                alert("Please enter a correct Email ID");
+                document.myForm.Email.focus();
+                return false;
+            }
+            return true;
+        }
+    </script>
+</head>
+<body>
+    <div class="form-container">
+        <form name="myForm" onsubmit="return(validate());">
+            <table>
+                <tr>
+                    <td>Name</td>
+                    <td><input type="text" name="Name" /></td>
+                </tr>
+                <tr>
+                    <td>Gender</td>
+                    <td>
+                        <input type="radio" name="gender" value="Male" /> Male
+                        <input type="radio" name="gender" value="Female" /> Female 
+                        <input type="radio" name="gender" value="Others" /> Others
+                    </td>
+                </tr>
+                <tr>
+                    <td>Email ID</td>
+                    <td><input type="text" name="Email" onchange="validateEmail();" /></td>
+                </tr>
+                <tr>
+                    <td>Phone Number</td>
+                    <td><input type="text" name="phno" /></td>
+                </tr>
+                <tr>
+                    <td>Zip Code</td>
+                    <td><input type="text" name="Zip" /></td>
+                </tr>
+                <tr>
+                    <td>Country</td>
+                    <td>
+                        <select name="Country">
+                            <option value="-1">Select Country</option>
+                            <option value="India">India</option>
+                            <option value="USA">USA</option>
+                            <option value="UK">UK</option>
+                            <!-- Add more countries as needed -->
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2" align="center"><input type="submit" value="Submit" /></td>
+                </tr>
+            </table>
+        </form>
+    </div>
+</body>
+</html>
