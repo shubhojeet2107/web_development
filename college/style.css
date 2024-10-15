@@ -1,0 +1,260 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    /* height: 200vh; */
+    width: 60vw;
+    background-color: rgb(237, 237, 182);
+}
+
+.header,
+.logos,
+.intec,
+.border,
+.location {
+    display: flex;
+}
+
+.header {
+    height: 140px;
+    background-color: rgb(57, 6, 6);
+    color: #fff;
+    font-size: 30px;
+    justify-content: center;
+}
+
+.logos {
+    flex-direction: row;
+    height: 180px;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.logos img {
+    height: 150px;
+}
+
+.intec {
+    justify-content: center;
+}
+
+.intec h1 {
+    font-size: 170px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: rgb(212, 7, 7);
+}
+
+.border {
+    justify-content: center;
+    font-size: 38px;
+    font-weight: 600;
+    color: rgb(90, 10, 10);
+}
+
+.border p {
+    border: 6px solid black;
+    padding: 12px;
+    background-color: #e4e0e0;
+    border-radius: 40px;
+}
+
+.location {
+    flex-direction: column;
+    align-items: center;
+    padding: 12px;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.location h3 {
+    border-top: 2px solid;
+    color: rgb(90, 10, 10);
+}
+
+.poster0 {
+    display: grid;
+    grid-template-columns: repeat(2, 220px);
+    gap: 10px;
+    margin-bottom: 3px;
+}
+
+.poster0 .img6 {
+    width: 250px;
+}
+
+.poster1 {
+    display: grid;
+    grid-template-columns: repeat(2, 220px);
+    gap: 10px;
+}
+
+.poster img {
+    height: 170px;
+}
+
+.poster {
+    margin-left: 220px;
+}
+
+.details {
+    display: flex;
+    justify-content: space-around;
+}
+
+.details .icons2 .brands .brands1 {
+    display: grid;
+    grid-template-columns: repeat(3, 220px);
+    margin-top: 25px;
+
+}
+
+.details .icons2 .brands .remainder {
+    display: flex;
+    gap: 30px;
+}
+
+.details .icons2 .brands .brands1 .block {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgb(90, 10, 10);
+    padding: 20px;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.brands1 .block:nth-child(1) {
+    border-right: 3px solid black;
+    border-bottom: 3px solid black;
+}
+
+.brands1 .block:nth-child(2) {
+    border-right: 3px solid black;
+    border-bottom: 3px solid black;
+}
+
+.brands1 .block:nth-child(4) {
+    border-right: 3px solid black;
+}
+
+.brands1 .block:nth-child(5) {
+    border-right: 3px solid black;
+}
+
+.brands1 .block:nth-child(3) {
+    border-bottom: 3px solid black;
+}
+
+.details .icons1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+}
+
+.details .icons1 span {
+    padding: 12px;
+}
+
+.details .icons1 p {
+    color: rgb(90, 10, 10);
+    margin-bottom: 60px;
+    font-size: larger;
+    font-weight: 800;
+}
+
+.brands1 .block {
+    display: flex;
+    flex-direction: column;
+}
+
+.brands1 .block img {
+    height: 60px;
+    margin-top: 12px;
+}
+
+.brands .remainder {
+    margin-top: 20px;
+    display: flex;
+    /* justify-content: space-between; */
+}
+
+.brands .remainder .time {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.brands .remainder .line {
+    border-right: 3px solid black;
+}
+
+.brands .remainder .time p {
+    color: rgb(90, 10, 10);
+    font-size: 20px;
+    font-weight: 900;
+}
+
+.brands .remainder .register {
+    display: flex;
+    flex-direction: column;
+}
+
+.brands .remainder .register p {
+    font-size: 20px;
+    font-weight: 800;
+    color: rgb(90, 10, 10);
+}
+
+.brands .remainder .register .qr {
+    display: flex;
+}
+
+.brands .remainder .register .qr img {
+    height: 110px;
+    margin: 5px 40px 5px 0px;
+}
+
+.brands .remainder .register .qr ul li {
+    font-size: 16px;
+    font-weight: 800;
+    color: rgb(90, 10, 10);
+}
+
+.brands .remainder .register .qr ul li a {
+    text-decoration: none;
+}
+
+.brands .remainder .register .qr ul hr {
+    width: 265px;
+}
+
+.brands .remainder .register h1 {
+    color: rgb(90, 10, 10);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.container .footer {
+    height: 58px;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(57, 6, 6);
+}
+
+.container .footer h1 {
+    font-size: 40px;
+}
